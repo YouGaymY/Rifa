@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro na Rifa</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <header>
+    <h1>Cadastro na Rifa</h1>
+    <p>Inscreva-se e garanta sua participação!</p>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Formulário de Cadastro</h2>
+      <form id="registerForm" action="checkout.html" method="GET">
+        <div class="form-group">
+          <label for="name">Nome completo:</label>
+          <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Número de telefone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pix">Chave Pix:</label>
+          <input type="text" id="pix" name="pix" placeholder="Digite sua chave Pix" required>
+        </div>
+
+        <button type="submit" class="main-btn">Comprar Rifa</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Obrigado por participar! Para dúvidas, entre em contato: rifasuporte@gmail.com
+
+  <script>
+    // Captura o envio do formulário
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = "checkout.html";  // Redireciona para a página de pagamento
+    });
+  </script>
+</body>
+</html>

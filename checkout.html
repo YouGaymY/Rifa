@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Rifa</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Checkout - Rifa</h1>
+    <p>Finalize seu pagamento para garantir sua participação na rifa!</p>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Detalhes do Pagamento</h2>
+      <p><strong>Rifa de R$2500,00</strong></p>
+      <p>Valor: R$2,99</p>
+      <p>Para concluir sua inscrição, efetue o pagamento via PIX.</p>
+
+      <!-- Imagem QR Code -->
+      <div class="qr-code">
+        <img src="https://i.ibb.co/PtZ5pPN/qrcode-138647588-6061a7a5822393c09bb559610d26ffbd.png" alt="QR Code para Pix" width="250" />
+        <p>Escaneie o QR Code para pagar via Pix</p>
+      </div>
+
+      <!-- Chave Pix -->
+      <div class="pix-details">
+        <p><strong>Chave Pix:</strong></p>
+        <input type="text" id="pix-key" value="sorteiosuperifa@gmail.com" readonly>
+        <button class="copy-btn" data-clipboard-target="#pix-key">Copiar chave Pix</button>
+        <p id="copy-msg"></p>
+      </div>
+
+      <!-- Botão para confirmar o pagamento -->
+      <form action="" method="GET">
+        <button type="submit" class="main-btn">Concluir Pagamento</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Para dúvidas, entre em contato: rifasuporte@gmail.com
+
+  <script>
+    // Usando o Clipboard.js para copiar o texto
+    var clipboard = new ClipboardJS('.copy-btn');
+    
+    clipboard.on('success', function(e) {
+      document.getElementById('copy-msg').innerText = 'Chave Pix copiada! Agora você pode colar e fazer o pagamento.';
+      e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+      document.getElementById('copy-msg').innerText = 'Falha ao copiar a chave. Tente novamente.';
+    });
+  </script>
+</body>
+</html>

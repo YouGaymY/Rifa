@@ -1,0 +1,402 @@
+/* Tema Escuro */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+header {
+  text-align: center;
+  background-color: #1f1f1f;
+  color: #4caf50;
+  padding: 1.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.prize img, .other-raffle img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.prize h2, .other-raffle h3 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 1.8rem;
+}
+
+.price {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+.status-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.status-btn:hover {
+  background-color: #45a049;
+}
+
+.status-btn.sold-out {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+h2, h3 {
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #1f1f1f;
+  color: #4caf50;
+}
+
+/* Seção de mensagens */
+.messages-section {
+  padding: 20px;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Balão de mensagem */
+.message-bubble {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 10px auto;
+  opacity: 0;
+  animation: fadeInOut 6s ease-in-out;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Foto do usuário */
+.message-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+/* Nome e conteúdo */
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #4caf50;
+  margin-bottom: 5px;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+/* Animação de fade in/out */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* Foto de perfil padrão (estilo WhatsApp) */
+.foto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Deixa a imagem redonda */
+  background-color: #ccc; /* Fundo cinza claro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e0e0e0; /* Bordas mais claras */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Nome e balão */
+.comentario {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.foto-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nome {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.balon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  font-size: 0.9rem;
+}
+.comentario {
+  opacity: 0;
+  transform: translateY(30px); /* Começa um pouco abaixo */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.comentario.animar {
+  opacity: 1;
+  transform: translateY(0); /* A animação faz ele subir */
+}
+
+.foto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.foto-nome {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.balon {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 300px;
+}
+.comentario {
+  opacity: 0;
+  transform: translateY(10px); /* A posição inicial é ligeiramente abaixo */
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Suaviza a animação */
+}
+
+.comentario.animar {
+  opacity: 1;
+  transform: translateY(0); /* A animação faz ele subir suavemente */
+}
+
+.foto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.foto-nome {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.balon {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 300px;
+}
+#mensagens {
+  position: relative;
+  height: 120px; /* Altura fixa para o container de mensagens */
+  overflow: hidden;
+}
+
+.comentario {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  transition: opacity 2s ease-in-out; /* A transição agora é mais lenta e suave */
+}
+
+.comentario.animar {
+  opacity: 1;
+}
+
+.foto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.foto-nome {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.balon {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 300px;
+}
+.locked-section img {
+  width: 100px;  /* Defina o tamanho desejado */
+  height: 100px; /* Defina o tamanho desejado */
+  margin-bottom: 20px;
+}
+/* Estilo do formulário e da mensagem de bloqueio */
+.form-section {
+  margin-top: 20px;
+  padding: 40px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  width: 75%; /* Largura do fundo */
+  margin: 0 auto; /* Centraliza o fundo */
+  text-align: left; /* Mantém o texto alinhado à esquerda */
+}
+
+.form-section label {
+  display: block;
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+/* Estilo dos campos de entrada (input e textarea) */
+.form-section input, .form-section textarea {
+  width: calc(100% - 20px); /* Aumenta a largura, mas mantém o padding */
+  max-width: 700px; /* Aumenta o tamanho máximo */
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Estilo do botão */
+.form-section button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo da mensagem de bloqueio */
+.locked-section {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.locked-section img {
+  width: 120px; /* Ajuste do tamanho da imagem do cadeado */
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.locked-section p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+.chances {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.chances table {
+  width: 80%; /* Aumentei a largura para 80% */
+  margin: 0 auto; /* Centraliza a tabela */
+  border-collapse: collapse;
+  background-color: #333; /* Fundo cinza (igual ao do site) */
+}
+
+.chances th, .chances td {
+  padding: 12px 15px; /* Aumentei o padding lateral para as células */
+  border: 1px solid #000; /* Linhas pretas */
+  text-align: center;
+  color: #28a745; /* Números em verde */
+}
+
+.chances th {
+  background-color: #333; /* Cor de fundo das células do cabeçalho */
+  color: #fff; /* Texto branco nas células de cabeçalho */
+}
+
+.chances tr:nth-child(even) {
+  background-color: #444; /* Fundo alternado das linhas em cinza mais claro */
+}
+
+.chances tr:hover {
+  background-color: #555; /* Fundo das linhas ao passar o mouse */
+}

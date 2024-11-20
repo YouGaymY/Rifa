@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifa de R$2500</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Incluí o CSS necessário aqui para facilitar */
+    .locked-message {
+      text-align: center;
+      margin-top: 20px;
+      color: #fff; /* Texto branco */
+    }
+
+    .cadeado {
+      width: 80px;  /* Aumentei o tamanho do cadeado */
+      height: 80px; /* Aumentei o tamanho do cadeado */
+      filter: invert(1); /* Faz a imagem do cadeado ficar branca */
+    }
+
+    /* Estilo da mensagem de bloqueio */
+    #locked-section {
+      background-color: #333; /* Cor de fundo escura */
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rifa de R$2500</h1>
+    <p>Participe agora e tenha a chance de ganhar um grande prêmio!</p>
+  </header>
+
+  <main>
+    <section class="prize">
+      <img src="https://i.ibb.co/sR1Sjyp/images-2-1.jpg" alt="Prêmio em Dinheiro">
+      <h2>Prêmio: <span>R$2500</span></h2>
+      <p class="price">Valor da rifa: <strong>R$2,99</strong></p>
+      <a href="cadastro.html" class="status-btn visible">Disponível</a>
+    </section>
+
+    <section class="details">
+      <h2>Detalhes da Rifa</h2>
+      <p>Total de rifas disponíveis: <strong>100</strong></p>
+    </section>
+
+    <section class="other-raffle">
+      <h2>Outras Rifas</h2>
+      <img src="https://i.ibb.co/ZxfxdSZ/images-1-1.jpg" alt="Outra Rifa">
+      <h3>Prêmio: <span>R$4199</span></h3>
+      <p class="price">Valor da rifa: <strong>R$8,99</strong></p>
+      <button disabled class="status-btn sold-out">Esgotado</button>
+    </section>
+
+    <!-- Seção de Comentários ao Vivo -->
+    <section class="messages-section">
+      <div class="comments-title">
+        Comentários ao vivo
+        <div class="alert-dot"></div> <!-- Bolinha piscando -->
+      </div>
+      <div id="mensagens" class="messages-container"></div>
+    </section>
+  </main>
+
+  <!-- Formulário de participação -->
+  <section class="form-section" id="form-section">
+    <h2>Formulário de Participação</h2>
+    <form id="participation-form" onsubmit="return handleSubmit(event)">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" placeholder="Digite seu nome">
+      
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+      
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" placeholder="Digite sua mensagem"></textarea>
+      
+      <button type="submit" id="submit-button">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Seção do formulário -->
+  <div id="form-section">
+    <!-- Seu formulário de comentários aqui -->
+  </div>
+
+  <!-- Seção de bloqueio que será exibida quando o formulário for enviado -->
+  <div id="locked-section" style="display: none;">
+    <div class="locked-message">
+      <img src="https://img.icons8.com/ios/50/000000/lock.png" alt="Cadeado" class="cadeado">
+      <p>O envio é permitido apenas para participantes, compre no mínimo 1 rifa para o comentário está disponível.</p>
+    </div>
+  </div>
+  
+  <section class="chances">
+  <h2>Chances de Ganhar</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Quantidade de Rifas</th>
+        <th>Chance de Ganhar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>36%</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>50%</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>57%</td>
+      </tr>
+      <tr>
+        <td>70</td>
+        <td>100%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+  
+  <footer>
+    <p>Boa sorte! Para dúvidas, entre em contato: rifasuporte@gmail.com</p>
+  </footer>
+
+  <script>
+    // Função para lidar com o envio do formulário
+    function handleSubmit(event) {
+      event.preventDefault(); // Previne o envio padrão do formulário
+
+      // Esconde o formulário
+      document.getElementById("form-section").style.display = "none";
+
+      // Exibe a seção de bloqueio
+      document.getElementById("locked-section").style.display = "block";
+      
+      // Aqui, você pode adicionar lógica adicional para tratar os dados enviados.
+      return false; // Impede o envio do formulário
+    }
+
+    // Lista de nomes e mensagens
+    const nomes = ['Lucas', 'Ana', 'João', 'Carla', 'Rafael', 'Juliana', 'Carlos', 'Mariana'];
+    const mensagens = [
+      'Acabei de comprar a minha rifa! Boa sorte para todos!',
+      'Estou super empolgado para ganhar! Espero que eu tenha sorte!',
+      'Comprei minha rifa! Já estou na torcida!',
+      'Acabei de participar da rifa, que venha o prêmio!',
+      'Estou participando! Que a sorte esteja ao meu favor!'
+    ];
+
+    // Lista de URLs de fotos aleatórias
+    const fotos = [
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png",
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png",
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png",
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png",
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png",
+      "https://i.ibb.co/bgk2xKk/download-removebg-preview.png"
+    ];
+
+    // Função para gerar mensagens com fotos
+    function gerarMensagemComFoto() {
+      const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+      const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+      const fotoAleatoria = fotos[Math.floor(Math.random() * fotos.length)];
+
+      return { nome: nomeAleatorio, mensagem: mensagemAleatoria, foto: fotoAleatoria };
+    }
+
+    function exibirMensagemComFoto() {
+      const mensagensContainer = document.getElementById("mensagens");
+      const { nome, mensagem, foto } = gerarMensagemComFoto();
+
+      const novaMensagem = document.createElement("div");
+      novaMensagem.classList.add("message-bubble");
+
+      novaMensagem.innerHTML = `
+        <img src="${foto}" alt="${nome}" class="message-photo">
+        <div class="message-content">
+          <div class="message-name">${nome}</div>
+          <div class="message-text">${mensagem}</div>
+        </div>
+      `;
+
+      mensagensContainer.appendChild(novaMensagem);
+
+      // Animação de fade in
+      setTimeout(() => {
+        novaMensagem.style.opacity = "1";
+      }, 100);
+
+      // Remoção da mensagem após 6 segundos
+      setTimeout(() => {
+        novaMensagem.style.opacity = "0";
+        setTimeout(() => mensagensContainer.removeChild(novaMensagem), 1000);
+      }, 6000);
+    }
+
+    // Inicialização
+    window.onload = function () {
+      setInterval(exibirMensagemComFoto, 5000); // Exibe nova mensagem a cada 5 segundos
+    };
+  </script>
+</body>
+</html>
